@@ -1,5 +1,6 @@
 package lu.atozdigital.api.model;
 
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -23,6 +24,7 @@ public class Order {
     }
 
     public Order(String reference, List<Article> articleList, Date date) {
+        super();
         this.reference = reference;
         this.articleList = articleList;
         this.date = date;

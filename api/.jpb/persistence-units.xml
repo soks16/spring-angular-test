@@ -5,7 +5,6 @@
       <persistence-unit name="Default">
         <packages>
           <package value="lu.atozdigital.api" />
-          <package value="lu.atozdigital.api" />
         </packages>
       </persistence-unit>
     </persistence-units>

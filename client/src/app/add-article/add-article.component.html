@@ -1,21 +1,23 @@
-<form class="example-form">
-    <h1>Create Article</h1>
+<div class="col-md-6 offset-md-3">
+  <h1 class="form-group">Create Article</h1>
+  <form (ngSubmit)="onSubmit()">   
+      <div class="form-group" appearance="fill">
+        <input class="form-control" type="text" 
+        placeholder="Article Name" id="name" name="name" [(ngModel)]="article.name">
+      </div>
     
-    <div class="example-full-width" appearance="fill">
-      <input class="form-control form-control-lg" type="text" placeholder="Article Name" value="">
-    </div>
-   
-    <div class="example-form" appearance="fill">
-      <input class="form-control form-control-lg" type="number" placeholder="Price" value="">
-    </div>
-   
-
-    <div class="example-form">
-      <input class="form-control form-control-lg" id="formFileLg" type="file" placeholder="Choose file">
-    </div>
-
-    <div class="example-form">
-      <button type="button" class="btn btn-success">Create</button>
-    </div>
+      <div class="form-group" appearance="fill">
+        <input class="form-control" type="number" id="price" name="price"  
+        placeholder="Price" [(ngModel)]="article.price">
+      </div>
     
-</form>
+      <div class="form-group">
+        <input class="form-control" id="picture" name="picture" type="file" 
+        placeholder="Choose file" [(ngModel)]="article.picture" >
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-success">Create</button>
+      </div> 
+  </form>
+</div>

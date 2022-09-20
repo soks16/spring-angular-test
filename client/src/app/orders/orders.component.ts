@@ -15,14 +15,32 @@ export class OrdersComponent implements OnInit {
   constructor(private ordersService: OrdersService) { }
 
   ngOnInit(): void {
+    
     this.getOrders();
+    /*this.orders = [
+      {
+        "id":1,
+        "reference":"AZPOUA90PC",
+        "date":"1992-01-08",
+        "articlelist":"AZERTY"
+      },
+      {
+        "id":1,
+        "reference":"MKHOUA9YGJ",
+        "date":"1982-11-22",
+        "articlelist":"QERTYU"
+      }
+    ];
+    */
   }
 
+  
   private getOrders(){
     this.ordersService.getOrdersList().subscribe(data =>{
       this.orders = data;
     });
   }
+
 
  
 

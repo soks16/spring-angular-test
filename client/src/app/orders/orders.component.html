@@ -16,10 +16,10 @@
         </tr>
     </thead>
     <tbody>
-       <tr *ngFor="let order of orders">
-        <td>{{ order.reference }}</td>
-        <td>{{ order.date }}</td>
-        <td>{{ order.articlelist }}</td>
+       <tr *ngFor="let soks of orders">
+        <td>{{ soks.reference }}</td>
+        <td>{{ soks.date }}</td>
+        <td>{{ soks.articlelist }}</td>
         <td><a href="">Edit</a></td>
        </tr>
     </tbody>
@@ -27,7 +27,7 @@
     <a routerLink="/order">
       <i class="fa-solid fa-circle-plus fa-3x"></i>
     </a>
-</table>
+  </table>
 
 </div>
 

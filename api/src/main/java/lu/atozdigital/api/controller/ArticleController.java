@@ -1,28 +1,24 @@
 package lu.atozdigital.api.controller;
 
+
 import lu.atozdigital.api.model.Article;
 import lu.atozdigital.api.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.ResourceAccessException;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @CrossOrigin("http://localhost:4200")
 @RestController
 public class ArticleController {
-
     @Autowired
     private ArticleRepository articleRepository;
 
     //voir tout les articles
-    @GetMapping("articles")
+    @GetMapping("/articles")
     public List<Article> getAllArticle(){
-
         return this.articleRepository.findAll();
     }
 
@@ -34,10 +30,10 @@ public class ArticleController {
         return ResponseEntity.ok().body(article);
     }
 
-    //enregistrer article
-    @PostMapping("articles")
+    //create article rest api
+    @PostMapping("/articles")
     public Article createArticle(@RequestBody Article article){
-        return this.articleRepository.save(article);
+        return articleRepository.save(article);
     }
 
 

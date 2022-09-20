@@ -10,9 +10,9 @@ export class OrdersService {
 
   private baseUrl = "http://localhost:8080/orders";
 
-  constructor(private httpclient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   getOrdersList(): Observable<Orders[]>{
-    return this.httpclient.get<Orders[]>('${this.baseUrl}');
+    return this.httpClient.get<Orders[]>('${this.baseUrl}');
   }
 }

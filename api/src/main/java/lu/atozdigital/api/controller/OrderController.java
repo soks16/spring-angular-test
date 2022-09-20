@@ -2,7 +2,6 @@ package lu.atozdigital.api.controller;
 
 
 import lu.atozdigital.api.model.Order;
-
 import lu.atozdigital.api.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +15,6 @@ import java.util.Random;
 @CrossOrigin("http://localhost:4200")
 @RestController
 public class OrderController {
-
     private final String LETTERS = "abcdefghijklmnopqrstuvwxyz";
     private final char[] ALPHANUMERIC = (LETTERS.toUpperCase()+"0123456789").toCharArray();
     @Autowired
@@ -24,7 +22,6 @@ public class OrderController {
 
     @GetMapping("orders")
     public List<Order> getAllOrder(){
-
         return this.orderRepository.findAll();
     }
 
@@ -52,6 +49,5 @@ public class OrderController {
         order.setDate(orderDetails.getDate());
         return  ResponseEntity.ok(this.orderRepository.save(order));
     }
-
 
 }

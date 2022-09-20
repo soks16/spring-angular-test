@@ -1,12 +1,11 @@
 package lu.atozdigital.api.model;
 
-
 import javax.persistence.*;
+
 
 @Entity
 @Table(name = "article")
 public class Article {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
@@ -16,14 +15,16 @@ public class Article {
     private String picture;
 
 
-    public Article(){
-
-        super();
-    }
     public Article(String name, double price, String picture) {
+        super();
         this.name = name;
         this.price = price;
         this.picture = picture;
+    }
+
+    public Article(){
+
+        super();
     }
 
     public Long getID() {
@@ -57,4 +58,5 @@ public class Article {
     public void setPicture(String picture) {
         this.picture = picture;
     }
+
 }
