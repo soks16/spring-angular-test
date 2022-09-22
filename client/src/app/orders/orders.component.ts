@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Orders } from '../class/orders'
 import { OrdersService } from '../service/orders.service';
 
@@ -12,36 +13,22 @@ export class OrdersComponent implements OnInit {
 
   orders!: Orders[];
 
-  constructor(private ordersService: OrdersService) { }
+  constructor(private ordersService: OrdersService, private router: Router) { }
 
   ngOnInit(): void {
     
     this.getOrders();
-    /*this.orders = [
-      {
-        "id":1,
-        "reference":"AZPOUA90PC",
-        "date":"1992-01-08",
-        "articlelist":"AZERTY"
-      },
-      {
-        "id":1,
-        "reference":"MKHOUA9YGJ",
-        "date":"1982-11-22",
-        "articlelist":"QERTYU"
-      }
-    ];
-    */
+    
   }
 
-  
   private getOrders(){
     this.ordersService.getOrdersList().subscribe(data =>{
       this.orders = data;
+      console.log(this.orders.length);
     });
   }
 
-
- 
-
+  updateOrders(id: number){
+    this.router.navigate(['edit-orders', id]);
+  }
 }

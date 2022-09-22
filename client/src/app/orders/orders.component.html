@@ -1,17 +1,11 @@
 <div class="container">
-  
-  
   <table class="table caption-top soks">
-    <label>
-      
-    </label>
     <caption>List of Orders</caption>
     
     <thead>
         <tr>
             <th scope="col">REF</th>
             <th scope="col">Date</th>
-            <th scope="col">Article</th>
             <th scope="col">Edit</th>
         </tr>
     </thead>
@@ -19,15 +13,14 @@
        <tr *ngFor="let soks of orders">
         <td>{{ soks.reference }}</td>
         <td>{{ soks.date }}</td>
-        <td>{{ soks.articlelist }}</td>
-        <td><a href="">Edit</a></td>
+        <td><a (click)="updateOrders(soks.id)">Edit</a></td>
        </tr>
     </tbody>
     <br>
-    <a routerLink="/order">
-      <i class="fa-solid fa-circle-plus fa-3x"></i>
-    </a>
   </table>
 
+  <a routerLink="/orders/add">
+    <i class="fa-solid fa-circle-plus fa-4x"></i>
+  </a>
 </div>
 

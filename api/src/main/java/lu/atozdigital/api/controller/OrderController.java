@@ -1,6 +1,5 @@
 package lu.atozdigital.api.controller;
 
-
 import lu.atozdigital.api.model.Order;
 import lu.atozdigital.api.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,9 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.ResourceAccessException;
-
 import java.util.List;
 import java.util.Random;
+
 
 @CrossOrigin("http://localhost:4200")
 @RestController
@@ -31,7 +30,6 @@ public class OrderController {
     public Order createOrder(@RequestBody Order order){
 
         //order.setReference("PA"+order.getID()+"PTYXH");
-
         StringBuilder result = new StringBuilder();
         for (int i =0; i< ALPHANUMERIC.length; i++){
             result.append(ALPHANUMERIC[new Random().nextInt(ALPHANUMERIC.length)]);

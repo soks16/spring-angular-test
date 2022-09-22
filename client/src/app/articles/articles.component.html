@@ -1,43 +1,12 @@
-<div class="row soks  g-4">
-  <div class="col">
-    <div class="card h-100">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Price</h5>
-      </div>
+<div class="col-sm-6 soks" style="max-width: 18rem;" *ngFor="let soks of articles">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{soks.name}}</h5>
+      <a href="#" class="btn btn-primary">{{ soks.price }}</a>
     </div>
-    
   </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Price</h5>
-      </div>
-    </div>
-    
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Price</h5>
-      </div>
-    </div>
-    
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Price</h5>
-      </div>
-    </div>
-    
-  </div>
-    
-        <a routerLink="/articles/add">
-          <i class="fa-solid fa-circle-plus fa-4x"></i>
-        </a>
-  
 </div>
+
+<a routerLink="/articles/add">
+  <i class="fa-solid fa-circle-plus fa-4x"></i>
+</a>

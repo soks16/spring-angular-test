@@ -7,14 +7,18 @@ import { ArticlesComponent } from './articles/articles.component';
 import { OrdersComponent } from './orders/orders.component';
 import { AddArticleComponent } from './add-article/add-article.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { EditOrdersComponent } from './edit-orders/edit-orders.component';
+import { AddOrdersComponent } from './add-orders/add-orders.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticlesComponent,
     OrdersComponent,
-    AddArticleComponent
+    AddArticleComponent,
+    EditOrdersComponent,
+    AddOrdersComponent
   ],
   imports: [
     BrowserModule,

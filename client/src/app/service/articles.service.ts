@@ -12,6 +12,10 @@ export class ArticlesService {
   constructor(private httpClient:HttpClient) { }
 
   createArticle(article: Articles): Observable<Object>{
-    return this.httpClient.post('${this.baseUrl}', article);
+    return this.httpClient.post(this.baseUrl, article);
+  }
+
+  getArticlesList(): Observable<Articles[]>{
+    return this.httpClient.get<Articles[]>(this.baseUrl);
   }
 }
