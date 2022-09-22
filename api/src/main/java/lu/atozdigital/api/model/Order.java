@@ -14,7 +14,7 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String reference;
 
-    @OneToMany
+    @OneToMany(targetEntity = Article.class, cascade = CascadeType.ALL)
     private List<Article> articleList;
 
     @Temporal(TemporalType.TIMESTAMP)

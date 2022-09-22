@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.ResourceAccessException;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.awt.*;
+import java.io.IOException;
 import java.util.List;
 
 @CrossOrigin("http://localhost:4200")
@@ -35,6 +38,8 @@ public class ArticleController {
     public Article createArticle(@RequestBody Article article){
         return articleRepository.save(article);
     }
+
+
 
 
 

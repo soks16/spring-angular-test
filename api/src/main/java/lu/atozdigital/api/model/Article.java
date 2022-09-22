@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, updatable = false)
+    @Column(name = "id")
     private Long ID;
     private String name;
     private double price;

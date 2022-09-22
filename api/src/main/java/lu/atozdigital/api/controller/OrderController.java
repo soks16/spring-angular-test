@@ -43,7 +43,6 @@ public class OrderController {
     public ResponseEntity<Order> updateOrder(@PathVariable(value = "id") Long orderId, @Validated @RequestBody Order orderDetails){
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(()-> new ResourceAccessException("order introuvable pour cet identifiant :: "+ orderId));
-        order.setReference(orderDetails.getReference());
         order.setDate(orderDetails.getDate());
         return  ResponseEntity.ok(this.orderRepository.save(order));
     }
